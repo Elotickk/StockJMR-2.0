@@ -47,6 +47,24 @@ barraBuscar.addEventListener('input', async () => {
         )
 })}
 
+////////////////////////////////////////////////////
+//// Ir al inicio cuando hay scrolling vertical ////
+////////////////////////////////////////////////////
+
+botonToTop = document.getElementById("toTop");
+
+window.onscroll = function () { detectarScrollVertical() };
+botonToTop.onclick = function () { irArriba() };
+
+function detectarScrollVertical() {
+    (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? botonToTop.style.display = "block" : botonToTop.style.display = "none";
+}
+
+function irArriba() {
+    document.body.scrollTop = 0; // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
+}
+
 //////Llamar funciones ////////
 traerYmostrarProductos();
 barraBusca();
