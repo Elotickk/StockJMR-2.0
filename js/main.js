@@ -19,11 +19,7 @@ function mostrarProductos(prd) {
                             <p class="priceProd">$${prod.price}</p>
                             </div>
                             `;
-
-        const contInfoCompra = document.createElement('div');
-        contInfoCompra.classList.add('contInfoCompra');
         mainSec.appendChild(contenedor);
-        contenedor.appendChild(contInfoCompra);
     });
 }
 
